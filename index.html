@@ -5,39 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+       /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+
         body{
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
         }
 
         .container{
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             width: 100%;
             height: 100vh;
         }
         .wrap{
-            flex: 1;
+            -webkit-box-flex: 1;
+                -ms-flex: 1;
+                    flex: 1;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             font-size: 2rem;
             font-family: Arial, sans-serif;
             white-space: nowrap;
         }
         .left{
             background-color: lightblue;
+            -webkit-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
             transition: all 0.4s ease-in-out;
         }
         .left:hover{
-            flex: 3;
+            -webkit-box-flex: 3;
+                -ms-flex: 3;
+                    flex: 3;
         }
         .right{
             background-color: lightcoral;
+            -webkit-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
             transition: all 0.4s ease-in-out;
         }
         .right:hover{
-            flex: 3;
+            -webkit-box-flex: 3;
+                -ms-flex: 3;
+                    flex: 3;
         }
 
         .bg1{
@@ -81,6 +108,8 @@
             color: #fff;
             border-radius: 5px;
             cursor: pointer;
+            -webkit-transition: background-color 0.3s ease;
+            -o-transition: background-color 0.3s ease;
             transition: background-color 0.3s ease;
             
         }
@@ -96,7 +125,10 @@
         @media screen and (max-width: 660px) {
             .container {
                 /* Chuyển thành xếp dọc trên mobile */
-                flex-direction: column; 
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column; 
             }
 
             .wrap {
@@ -109,7 +141,9 @@
             /* Tùy chỉnh hiệu ứng khi chạm vào trên mobile (nếu muốn) */
             .left:active, .right:active {
                 /* Dùng :active để khi ngón tay ấn xuống thì mở rộng */
-                flex: 2; 
+                -webkit-box-flex: 2;
+                    -ms-flex: 2;
+                        flex: 2; 
             }
             
             /* Hoặc nếu muốn tắt hoàn toàn hiệu ứng co giãn trên mobile để tránh giật */
