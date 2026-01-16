@@ -92,13 +92,35 @@
             background-color: rgba(18, 243, 63, 0.3);
         }
 
+        /* Thêm vào cuối thẻ <style> */
         @media screen and (max-width: 660px) {
-            .wrap{
-                font-size: 1rem;
+            .container {
+                /* Chuyển thành xếp dọc trên mobile */
+                flex-direction: column; 
             }
 
-            .btn{
-                padding: 5px 10px;
+            .wrap {
+                font-size: 1rem;
+                /* Trên mobile để mặc định height bằng nhau */
+                height: 50%; 
+                width: 100%;
+            }
+
+            /* Tùy chỉnh hiệu ứng khi chạm vào trên mobile (nếu muốn) */
+            .left:active, .right:active {
+                /* Dùng :active để khi ngón tay ấn xuống thì mở rộng */
+                flex: 2; 
+            }
+            
+            /* Hoặc nếu muốn tắt hoàn toàn hiệu ứng co giãn trên mobile để tránh giật */
+            /*
+            .left:hover, .right:hover {
+                flex: 1; 
+            }
+            */
+
+            .btn {
+                padding: 10px 20px;
             }
         }
     </style>
