@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Split Landing Page</title>
     <style>
-       /*
-        * Prefixed by https://autoprefixer.github.io
-        * PostCSS: v8.4.14,
-        * Autoprefixer: v10.4.7
-        * Browsers: last 4 version
-        */
-
         body{
             margin: 0;
             padding: 0;
@@ -25,7 +18,6 @@
             display: flex;
             width: 100%;
             height: 100vh;
-            /* Chặn bôi đen văn bản khi bấm nhiều lần trên mobile */
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
@@ -58,7 +50,7 @@
             background-color: lightblue;
         }
         
-        /* --- SỬA Ở ĐÂY: Thêm .active để hỗ trợ JS --- */
+
         .left:hover, .left.active {
             -webkit-box-flex: 3;
                 -ms-flex: 3;
@@ -69,7 +61,6 @@
             background-color: lightcoral;
         }
 
-        /* --- SỬA Ở ĐÂY: Thêm .active để hỗ trợ JS --- */
         .right:hover, .right.active {
             -webkit-box-flex: 3;
                 -ms-flex: 3;
@@ -122,7 +113,7 @@
             -webkit-transition: background-color 0.3s ease;
             -o-transition: background-color 0.3s ease;
             transition: background-color 0.3s ease;
-            pointer-events: auto; /* Cho phép bấm nút */
+            pointer-events: auto; 
         }
 
         .btn-left:hover{
@@ -146,8 +137,6 @@
                 width: 100%;
             }
             
-            /* Đã xóa đoạn .left:active vì bây giờ dùng JS class .active rồi */
-
             .btn {
                 padding: 10px 20px;
             }
@@ -169,14 +158,10 @@
         const right = document.querySelector('.right');
 
         function handleTouch(side) {
-            // Nếu bấm bên trái
             if (side === 'left') {
-                // Thêm class active cho left
                 left.classList.add('active');
-                // Xóa class active của right (để nó thu nhỏ lại)
                 right.classList.remove('active');
             } 
-            // Nếu bấm bên phải
             else if (side === 'right') {
                 right.classList.add('active');
                 left.classList.remove('active');
